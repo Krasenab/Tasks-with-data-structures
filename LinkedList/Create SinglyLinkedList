@@ -1,0 +1,51 @@
+using System;
+public class Program 
+{
+  static void Main() 
+  {
+     SinglyLinkedList sLL = new SinglyLinkedList();
+     sLL.AddFirst(15);
+     sLL.PrintList();
+     
+  }
+}
+public class Node{
+    
+    public Node Next;
+    public int Data;
+    
+    public Node(int Data)
+    {
+        this.Data = Data;
+        this.Next = null;
+    }
+    
+    
+}
+public class SinglyLinkedList
+{
+    private Node head;
+    public SinglyLinkedList()
+    {
+        this.head = null;
+    }
+    
+    
+    public void AddFirst(int data)
+    {
+      Node newNode = new Node(data);
+      newNode.Next = head;
+      head = newNode;
+    }
+    
+    public void PrintList()
+    {
+        Node current = head;
+        while (current != null)
+        {
+            Console.Write(current.Data + " ");
+            current = current.Next;
+        }
+        Console.WriteLine("null");
+    }
+}
