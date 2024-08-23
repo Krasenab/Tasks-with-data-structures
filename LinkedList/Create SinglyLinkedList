@@ -4,7 +4,12 @@ public class Program
   static void Main() 
   {
      SinglyLinkedList sLL = new SinglyLinkedList();
-     sLL.AddFirst(15);
+     sLL.AddFirst(11);//2
+     sLL.AddFirst(12); // 1
+     sLL.AddLast(14); //3
+     
+     sLL.PrintList();
+     sLL.RemoveFirst();
      sLL.PrintList();
      
   }
@@ -52,6 +57,41 @@ public class SinglyLinkedList
         }
          current.Next = newNode;
       }
+    }
+    public void RemoveFirst()
+    {
+        if(head != null)
+        {
+          head = head.Next;
+           
+        }
+       
+    }
+    public void RemoveLast()
+    {
+        if(head == null)
+        {
+            return;
+        }
+        else
+        {
+            if(head.Next ==null)
+            {
+                head = null;
+                return;
+            }
+            else{
+                
+                Node current = head;
+               while(current.Next.Next!=null)
+               {
+                    current = current.Next;
+               }
+                
+              current.Next = null;
+            }
+                
+        }
     }
     public void PrintList()
     {
