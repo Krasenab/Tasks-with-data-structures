@@ -37,7 +37,22 @@ public class SinglyLinkedList
       newNode.Next = head;
       head = newNode;
     }
-    
+    public void AddLast(int data)
+    {
+       Node newNode = new Node(data);
+       if(head ==null)
+      {
+         head = newNode;
+      }
+      else{
+         Node current = head;
+        while(current.Next !=null)
+        {
+            current = current.Next;
+        }
+         current.Next = newNode;
+      }
+    }
     public void PrintList()
     {
         Node current = head;
