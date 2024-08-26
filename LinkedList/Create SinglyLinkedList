@@ -11,6 +11,9 @@ public class Program
      sLL.PrintList();
      sLL.RemoveFirst();
      sLL.PrintList();
+
+     int coutnOfSinglyLinkedList = sLL.Count();
+     Console.WriteLine(coutnOfSinglyLinkedList);
      
   }
 }
@@ -92,6 +95,25 @@ public class SinglyLinkedList
             }
                 
         }
+    }
+    public int Count()
+    {
+        if(head==null)
+        {
+            return 0;
+        }
+        else
+        {
+            Node copiedHead = head;
+            int count = 1;
+            while(copiedHead.Next !=null)
+            {
+                copiedHead = copiedHead.Next;
+                count++;
+            }
+            
+        }
+        return count;
     }
     public void PrintList()
     {
